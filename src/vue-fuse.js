@@ -1,10 +1,7 @@
-<template>
-  <input type="search" v-model="value" :placeholder="placeholder">
-</template>
-<script>
-import Fuse from 'fuse.js'
-export default {
-  name: 'VueFuse',
+// import Fuse from './fuse.js/fuse.min.js'
+
+Vue.component('VueFuse', {
+  props: ['id', 'title'],
   data () {
     return {
       fuse: null,
@@ -135,6 +132,7 @@ export default {
   },
   methods: {
     initFuse () {
+      console.log(this.options);
       this.fuse = new Fuse(this.list, this.options)
       if (this.defaultAll) {
         this.result = this.list
@@ -155,17 +153,8 @@ export default {
       }
     }
   },
-  /**
-  * Vue 1.x
-  */
-  ready () {
-    this.initFuse()
-  },
-  /**
-  * Vue 2.x
-  */
   mounted () {
     this.initFuse()
-  }
-}
-</script>
+  },
+  template: '<input type="search" class="form-control" v-model="value" :placeholder="placeholder">'
+});
