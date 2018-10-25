@@ -22,8 +22,9 @@
             <div class="col-md-10">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-2">
-                            <vue-fuse placeholder="Search role from Star Wars" :list="starwars" :keys="['name','gender']" event-name="fuseSearch"></vue-fuse>
+                        <div class="col-sm-5">
+                            <vue-fuse placeholder="Search role from Star Wars" :list="starwars" :keys="['name','gender']" 
+                                      event-name="fuseSearch"></vue-fuse>
                         </div>
                         <div class="col-sm-2">
                             <button class="form-control" @click="runSearch('Skywalker')">Search Skywalkers</button>

@@ -81,8 +81,6 @@ var app = new Vue({
     methods: {
         runSearch(keyword) {
 
-            console.log(keyword);
-
             this.$search(keyword, this.starwars, {
                 keys: ['name']
             }).then(result => {
@@ -94,8 +92,14 @@ var app = new Vue({
         var vm = this;
         vm.starwars = FOO_DATA;
 
+        //Use default emit event
+        // this.$on('fuseResultsUpdated', results => {
+        //     this.results = results
+        // });
+        //Or use a new one
         this.$on('fuseSearch', results => {
-            this.results = results
+            this.results = results;
+            console.info(this.results);
         })
     }
 })
