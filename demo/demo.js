@@ -1,5 +1,3 @@
-// Vue.use(VueFuse);
-
 const FOO_DATA = [{
         name: 'Luke Skywalker',
         gender: 'male',
